@@ -28,3 +28,7 @@ emptyCell =
     div
         [ EmptyCell ]
         []
+
+drawBoard : Model -> Html Msg
+drawBoard model =
+    
