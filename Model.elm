@@ -14,3 +14,10 @@ type Msg
     | SetStan Stan.ConfigurationSelection Sense
     | SetAlan Alan.ConfigurationSelection Sense
 
+
+
+-- MODEL
+
+
+type alias Model =
+    {}
