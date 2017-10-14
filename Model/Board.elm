@@ -9,6 +9,7 @@ import Model.Pinguin.Fred as Fred
 import Model.Pinguin.Brad as Brad
 import Model.Pinguin.Dave as Dave
 import Model.Pinguin.Stan as Stan
+import Model.Pinguin.Andy as Andy
 
 
 type alias Board =
@@ -16,6 +17,7 @@ type alias Board =
     , brad : Maybe (Brad.Configuration Int Int)
     , dave : Maybe (Dave.Configuration Int Int)
     , stan : Maybe (Stan.Configuration Int Int)
+    , andy : Maybe (Andy.Configuration Int Int)
     }
 
 

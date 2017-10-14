@@ -13,11 +13,3 @@ type Msg
     | SetDave Dave.ConfigurationSelection Sense
     | SetStan Stan.ConfigurationSelection Sense
     | SetAlan Alan.ConfigurationSelection Sense
-
-
-
--- MODEL
-
-
-type alias Model =
-    {}

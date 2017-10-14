@@ -1,4 +1,4 @@
-module Model.Pinguin.Stan exposing (..)
+module Model.Pinguin.Andy exposing (..)
 
 import Model.Aliases exposing (Configuration, ConfigurationSelection)
 

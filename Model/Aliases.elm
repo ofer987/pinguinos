@@ -1,4 +1,4 @@
-module Model.Aliases exposing (Configuration, Sense, Piece, Model, Length, senseToInt)
+module Model.Aliases exposing (Configuration, ConfigurationSelection, Sense, Piece, Model, Length, senseToInt)
 
 
 type Sense
@@ -6,6 +6,7 @@ type Sense
     | Right
     | Down
     | Left
+
 
 type Length
     = Three
@@ -17,6 +18,12 @@ type alias Configuration =
     , penguin : Int
     , length : Length
     }
+
+
+type ConfigurationSelection
+    = First
+    | Second
+    | Third
 
 
 type alias Piece =
@@ -43,6 +50,7 @@ senseToInt sense =
 
         Left ->
             3
+
 
 lengthToInt : Length -> Int
 lengthToInt length =

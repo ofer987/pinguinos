@@ -1,12 +1,6 @@
 module Model.Pinguin.Fred exposing (..)
 
-import Model.Aliases exposing (Configuration)
-
-
-type ConfigurationSelection
-    = First
-    | Second
-    | Third
+import Model.Aliases exposing (Configuration, ConfigurationSelection)
 
 
 firstConfiguration : Configuration
@@ -36,11 +30,11 @@ thirdConfiguration =
 getConfiguration : ConfigurationSelection -> Configuration
 getConfiguration value =
     case value of
-        First ->
+        ConfigurationSelection.First ->
             firstConfiguration
 
-        Second ->
+        ConfigurationSelection.Second ->
             secondConfiguration
 
-        Third ->
+        ConfigurationSelection.Third ->
             thirdConfiguration
