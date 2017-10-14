@@ -2,7 +2,7 @@ module MyCss exposing (..)
 
 import Css exposing (..)
 import Css.Elements exposing (body, div, h2, svg, img, line)
-import Css.Colors exposing (gray, blue)
+import Css.Colors exposing (gray, blue, black, purple)
 import Css.Namespace exposing (namespace)
 
 
@@ -22,24 +22,44 @@ css : Stylesheet
 css =
     (stylesheet << namespace "Pinguinos")
         [ body []
-        , img [ width inherit ]
+        , img
+            [ width inherit ]
+        , class Row
+            [ width (px 250)
+            , height (px 50)
+            , children
+                [ class Column
+                    [ width (px 50)
+                    , height (px 50)
+                    , backgroundColor blue
+                    , display inlineBlock
+                    ]
+                ]
+            ]
         , class Board
             [ children
                 [ class Row
-                    [ width (px 250)
-                    , height (px 50)
-                    , children
+                    [ children
                         [ class Column
-                            [ width (px 50)
-                            , height (px 50)
-                            , backgroundColor blue
-                            , display inlineBlock
+                            [ display inlineBlock
+                            , backgroundColor black
                             ]
                         ]
                     ]
                 ]
             ]
-
+        , class Pinguino
+            [ children
+                [ class Row
+                    [ children
+                        [ class Column
+                            [ display inlineBlock
+                            , backgroundColor purple
+                            ]
+                        ]
+                    ]
+                ]
+            ]
         -- , class Company
         --     [ margin2 (px 80) (px 0)
         --     , nthChild "even"
