@@ -4,6 +4,7 @@ import Html exposing (Html)
 
 import View.Board exposing (view)
 import Model exposing (..)
+import Model.Aliases exposing (..)
 
 
 view : Model -> Html Msg

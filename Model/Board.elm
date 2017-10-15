@@ -5,11 +5,11 @@ import Utilities.List exposing (..)
 
 import Utilities.Conversions as Conversion
 
-import Model.Pinguin.Fred as Fred
-import Model.Pinguin.Brad as Brad
-import Model.Pinguin.Dave as Dave
-import Model.Pinguin.Stan as Stan
-import Model.Pinguin.Andy as Andy
+import Model.Pinguino.Fred as Fred
+import Model.Pinguino.Brad as Brad
+import Model.Pinguino.Dave as Dave
+import Model.Pinguino.Stan as Stan
+import Model.Pinguino.Andy as Andy
 
 
 type alias Board =

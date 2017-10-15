@@ -1,8 +1,8 @@
 module Main exposing (..)
 
 import Html
-
 import Model exposing (..)
+import Model.Aliases exposing (..)
 import View exposing (view)
 
 
@@ -21,7 +21,9 @@ main =
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( Model.init, Cmd.none )
+
+
 
 -- UPDATE
 

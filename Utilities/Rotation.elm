@@ -1,6 +1,6 @@
 module Utilities.Rotation exposing (counterClockwise, clockwise)
 
-import Model.Pinguin.Fred exposing (..)
+import Model.Pinguino.Fred exposing (..)
 import Utilities.Rotation.Private as Private
 import Utilities.Conversions as Conversions
 import Array exposing (Array)

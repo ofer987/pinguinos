@@ -10,21 +10,19 @@ import MyCss exposing (..)
     Html.CssHelpers.withNamespace "Pinguinos"
 
 
-view : Model -> Html Msg
-view model =
+view : Piece -> Html Msg
+view piece =
     div
-        [ class [ Board ] ]
-        rows
+        [ class [ Pinguino ] ]
+        rows piece.length
 
 
-rows : List (Html Msg)
-rows =
-    [ row
-    , row
-    , row
-    , row
-    , row
-    ]
+rows : Int -> List (Html Msg)
+rows length =
+    if length > 0 then
+        row :: rows (length - 1)
+    else
+        []
 
 
 row : Html Msg

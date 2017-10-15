@@ -1,4 +1,4 @@
-module View.Pinguin.Fred
+module View.Pinguino.Fred
 
 import Model exposing (..)
 

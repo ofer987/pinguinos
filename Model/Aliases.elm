@@ -1,4 +1,4 @@
-module Model.Aliases exposing (Configuration, ConfigurationSelection, Sense, Piece, Model, Length, senseToInt)
+module Model.Aliases exposing (Configuration, ConfigurationSelection (..), Sense (..), Piece, Model, Length (..), senseToInt)
 
 
 type Sense

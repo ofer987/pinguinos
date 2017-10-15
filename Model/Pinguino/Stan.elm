@@ -1,13 +1,13 @@
-module Model.Pinguin.Brad exposing (..)
+module Model.Pinguino.Stan exposing (..)
 
-import Model.Aliases exposing (Configuration, ConfigurationSelection)
+import Model.Aliases exposing (Configuration, ConfigurationSelection (..), Length (..))
 
 
 firstConfiguration : Configuration
 firstConfiguration =
     { board = 50720
     , penguin = 32
-    , length = 3
+    , length = Three
     }
 
 
@@ -15,7 +15,7 @@ secondConfiguration : Configuration
 secondConfiguration =
     { board = 52288
     , penguin = 64
-    , length = 3
+    , length = Three
     }
 
 
@@ -23,18 +23,18 @@ thirdConfiguration : Configuration
 thirdConfiguration =
     { board = 27712
     , penguin = 64
-    , length = 3
+    , length = Three
     }
 
 
 getConfiguration : ConfigurationSelection -> Configuration
 getConfiguration value =
     case value of
-        ConfigurationSelection.First ->
+        First ->
             firstConfiguration
 
-        ConfigurationSelection.Second ->
+        Second ->
             secondConfiguration
 
-        ConfigurationSelection.Third ->
+        Third ->
             thirdConfiguration

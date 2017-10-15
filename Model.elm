@@ -1,15 +1,37 @@
 module Model exposing (..)
 
-import Model.Pinguin.Fred as Fred
-import Model.Pinguin.Brad as Brad
-import Model.Pinguin.Dave as Dave
-import Model.Pinguin.Stan as Stan
+import Model.Aliases exposing (..)
+import Model.Pinguino.Fred as Fred
+import Model.Pinguino.Brad as Brad
+import Model.Pinguino.Dave as Dave
+import Model.Pinguino.Stan as Stan
+import Model.Pinguino.Andy as Andy
+
+
+init : Model
+init =
+    ( { configuration = Fred.firstConfiguration
+      , sense = Up
+      }
+    , { configuration = Brad.firstConfiguration
+      , sense = Up
+      }
+    , { configuration = Dave.firstConfiguration
+      , sense = Up
+      }
+    , { configuration = Stan.firstConfiguration
+      , sense = Up
+      }
+    , { configuration = Andy.firstConfiguration
+      , sense = Up
+      }
+    )
 
 
 type Msg
     = None
-    | SetFred Fred.ConfigurationSelection Sense
-    | SetBrad Brad.ConfigurationSelection Sense
-    | SetDave Dave.ConfigurationSelection Sense
-    | SetStan Stan.ConfigurationSelection Sense
-    | SetAlan Alan.ConfigurationSelection Sense
+    | SetFred ConfigurationSelection Sense
+    | SetBrad ConfigurationSelection Sense
+    | SetDave ConfigurationSelection Sense
+    | SetStan ConfigurationSelection Sense
+    | SetAlan ConfigurationSelection Sense
