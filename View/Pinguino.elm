@@ -2,6 +2,9 @@ module View.Pinguino exposing (view)
 
 import Html.CssHelpers
 import Html exposing (Html, div, text)
+import Utilities.Conversion as Conversion
+import List
+import Utilities.List
 import Model exposing (..)
 import Model.Aliases exposing (..)
 import MyCss exposing (..)
@@ -14,13 +17,13 @@ import MyCss exposing (..)
 view : Piece -> Html Msg
 view piece =
     let
-        length =
-            lengthToInt piece.configuration.length
     in
         div
             [ class [ Pinguino ] ]
             (label :: rows length length pinguino)
 
+length Length =
+    lengthToInt piece.configuration.length
 
 label : Html Msg
 label =
@@ -74,18 +77,8 @@ column pinguinoColumn =
             []
 
 
-pinguino : List (List Bool)
-pinguino =
-    [ [ True
-      , False
-      , False
-      ]
-    , [ True
-      , True
-      , False
-      ]
-    , [ True
-      , True
-      , False
-      ]
-    ]
+pinguino : Piece -> List (List Bool)
+pinguino piece =
+    Conversion.toBinary piece.configuration.length piece.configuration.board
+        |> List.map Conversion.intToBool
+        |> Utilities.List.toDoubleList piece.length False

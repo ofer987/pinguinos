@@ -1,26 +1,34 @@
-module Utilities.Conversions exposing (toBinary, toDecimal)
+module Utilities.Conversion exposing (toBinary, toDecimal, intToBool)
 
 import List
 import Arithmetic
+
+
+intToBool : Int -> Bool
+intToBool value =
+    if value == 0 then
+        False
+    else
+        True
 
 
 toBinary : Int -> Int -> List Int
 toBinary length value =
     Arithmetic.toBase value 2
         |> List.reverse
-        |> toLength length
+        |> toLength length 0
         |> List.reverse
 
 
-toLength : Int List Int -> List Int
-toLength length list =
+toLength : Int -> a -> List a -> List a
+toLength length default list =
     if length > 0 then
         case list of
             head :: tail ->
-                head :: toLength (length -1) tail
+                head :: toLength (length - 1) default tail
 
             [] ->
-                0 :: toLength (length - 1) []
+                default :: toLength (length - 1) default []
     else
         []
 
