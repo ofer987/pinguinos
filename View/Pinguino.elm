@@ -3,6 +3,7 @@ module View.Pinguino exposing (view)
 import Html.CssHelpers
 import Html exposing (Html, div)
 import Model exposing (..)
+import Model.Aliases exposing (..)
 import MyCss exposing (..)
 
 
@@ -14,7 +15,7 @@ view : Piece -> Html Msg
 view piece =
     div
         [ class [ Pinguino ] ]
-        rows piece.length
+        (rows (lengthToInt piece.configuration.length))
 
 
 rows : Int -> List (Html Msg)
@@ -46,4 +47,4 @@ column : Html Msg
 column =
     div
         [ class [ Column ] ]
-        [ ]
+        []

@@ -10,22 +10,27 @@ import Model.Pinguino.Andy as Andy
 
 init : Model
 init =
-    ( { configuration = Fred.firstConfiguration
-      , sense = Up
-      }
-    , { configuration = Brad.firstConfiguration
-      , sense = Up
-      }
-    , { configuration = Dave.firstConfiguration
-      , sense = Up
-      }
-    , { configuration = Stan.firstConfiguration
-      , sense = Up
-      }
-    , { configuration = Andy.firstConfiguration
-      , sense = Up
-      }
-    )
+    { fred =
+        { configuration = Fred.firstConfiguration
+        , sense = Up
+        }
+    , brad =
+        { configuration = Brad.firstConfiguration
+        , sense = Up
+        }
+    , dave =
+        { configuration = Dave.firstConfiguration
+        , sense = Up
+        }
+    , stan =
+        { configuration = Stan.firstConfiguration
+        , sense = Up
+        }
+    , andy =
+        { configuration = Andy.firstConfiguration
+        , sense = Up
+        }
+    }
 
 
 type Msg

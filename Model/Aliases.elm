@@ -1,4 +1,7 @@
-module Model.Aliases exposing (Configuration, ConfigurationSelection (..), Sense (..), Piece, Model, Length (..), senseToInt)
+-- TODO: Rename to Model.Types
+
+
+module Model.Aliases exposing (Configuration, ConfigurationSelection(..), Sense(..), Piece, Model, Length(..), senseToInt, lengthToInt)
 
 
 type Sense
@@ -33,7 +36,12 @@ type alias Piece =
 
 
 type alias Model =
-    ( Piece, Piece, Piece, Piece, Piece )
+    { fred : Piece
+    , brad : Piece
+    , dave : Piece
+    , stan : Piece
+    , andy : Piece
+    }
 
 
 senseToInt : Sense -> Int
