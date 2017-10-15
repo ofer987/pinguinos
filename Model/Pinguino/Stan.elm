@@ -1,29 +1,32 @@
 module Model.Pinguino.Stan exposing (..)
 
-import Model.Aliases exposing (Configuration, ConfigurationSelection (..), Length (..))
+import Model.Aliases exposing (Configuration, ConfigurationSelection(..), Length(..))
 
 
 firstConfiguration : Configuration
 firstConfiguration =
-    { board = 50720
-    , penguin = 32
+    { board = 94
+    , penguin = 2
     , length = Three
+    , name = "Stan"
     }
 
 
 secondConfiguration : Configuration
 secondConfiguration =
-    { board = 52288
-    , penguin = 64
+    { board = 182
+    , penguin = 2
     , length = Three
+    , name = "Stan"
     }
 
 
 thirdConfiguration : Configuration
 thirdConfiguration =
-    { board = 27712
-    , penguin = 64
+    { board = 179
+    , penguin = 1
     , length = Three
+    , name = "Stan"
     }
 
 

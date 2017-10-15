@@ -5,27 +5,38 @@ import Model.Aliases exposing (Configuration, ConfigurationSelection (..), Lengt
 
 firstConfiguration : Configuration
 firstConfiguration =
-    { board = 50720
-    , penguin = 32
-    , length = Three
+    { board = 63488
+    , penguin = 2048
+    , length = Four
+    , name = "Andy"
     }
 
 
 secondConfiguration : Configuration
 secondConfiguration =
-    { board = 52288
-    , penguin = 64
-    , length = Three
+    { board = 62464
+    , penguin = 1024
+    , length = Four
+    , name = "Andy"
     }
 
 
 thirdConfiguration : Configuration
 thirdConfiguration =
-    { board = 27712
-    , penguin = 64
-    , length = Three
+    { board = 61952
+    , penguin = 512
+    , length = Four
+    , name = "Andy"
     }
 
+-- TODO: Add a fourth configuration!
+fourthConfiguration : Configuration
+fourthConfiguration =
+    { board = 61696
+    , penguin = 256
+    , length = Four
+    , name = "Andy"
+    }
 
 getConfiguration : ConfigurationSelection -> Configuration
 getConfiguration value =

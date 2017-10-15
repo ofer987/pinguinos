@@ -14,12 +14,12 @@ intToBool value =
 
 toBinary : Int -> Int -> List Int
 toBinary length value =
-    Arithmetic.toBase value 2
-        |> List.reverse
-        |> toLength length 0
-        |> List.reverse
+    value
+        |> Arithmetic.toBase 2
+        |> toLength (length ^ 2) 0
 
 
+-- bug
 toLength : Int -> a -> List a -> List a
 toLength length default list =
     if length > 0 then

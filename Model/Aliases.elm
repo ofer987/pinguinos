@@ -20,6 +20,7 @@ type alias Configuration =
     { board : Int
     , penguin : Int
     , length : Length
+    , name : String
     }
 
 

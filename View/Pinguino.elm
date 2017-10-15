@@ -17,17 +17,17 @@ import MyCss exposing (..)
 view : Piece -> Html Msg
 view piece =
     let
+        length =
+            lengthToInt piece.configuration.length
     in
         div
             [ class [ Pinguino ] ]
-            (label :: rows length length pinguino)
+            (label piece.configuration.name :: rows length length (pinguinoRows piece))
 
-length Length =
-    lengthToInt piece.configuration.length
 
-label : Html Msg
-label =
-    div [] [ text "Pinguino" ]
+label : String -> Html Msg
+label name =
+    div [] [ text name ]
 
 
 rows : Int -> Int -> List (List Bool) -> List (Html Msg)
@@ -77,8 +77,12 @@ column pinguinoColumn =
             []
 
 
-pinguino : Piece -> List (List Bool)
-pinguino piece =
-    Conversion.toBinary piece.configuration.length piece.configuration.board
-        |> List.map Conversion.intToBool
-        |> Utilities.List.toDoubleList piece.length False
+pinguinoRows : Piece -> List (List Bool)
+pinguinoRows piece =
+    let
+        length =
+            lengthToInt piece.configuration.length
+    in
+        Conversion.toBinary length piece.configuration.board
+            |> List.map Conversion.intToBool
+            |> Utilities.List.toDoubleList length False

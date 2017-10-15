@@ -5,25 +5,28 @@ import Model.Aliases exposing (Configuration, ConfigurationSelection (..), Lengt
 
 firstConfiguration : Configuration
 firstConfiguration =
-    { board = 50720
-    , penguin = 32
-    , length = Three
+    { board = 52352
+    , penguin = 16384
+    , length = Four
+    , name = "Brad"
     }
 
 
 secondConfiguration : Configuration
 secondConfiguration =
-    { board = 52288
-    , penguin = 64
-    , length = Three
+    { board = 36032
+    , penguin = 1024
+    , length = Four
+    , name = "Brad"
     }
 
 
 thirdConfiguration : Configuration
 thirdConfiguration =
-    { board = 27712
+    { board = 35012
     , penguin = 64
-    , length = Three
+    , length = Four
+    , name = "Brad"
     }
 
 
