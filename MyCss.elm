@@ -2,7 +2,7 @@ module MyCss exposing (..)
 
 import Css exposing (..)
 import Css.Elements exposing (body, div, h2, svg, img, line)
-import Css.Colors exposing (gray, blue, black, purple)
+import Css.Colors exposing (gray, blue, black, purple, green)
 import Css.Namespace exposing (namespace)
 
 
@@ -13,9 +13,10 @@ grey =
 
 type CssClasses
     = Board
+    | Pinguino
     | Row
     | Column
-    | Pinguino
+    | Filled
 
 
 css : Stylesheet
@@ -32,6 +33,12 @@ css =
                     [ width (px 50)
                     , height (px 50)
                     , backgroundColor blue
+                    , display inlineBlock
+                    ]
+                , class Filled
+                    [ width (px 50)
+                    , height (px 50)
+                    , backgroundColor green
                     , display inlineBlock
                     ]
                 ]
@@ -60,6 +67,7 @@ css =
                     ]
                 ]
             ]
+
         -- , class Company
         --     [ margin2 (px 80) (px 0)
         --     , nthChild "even"

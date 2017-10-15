@@ -8,21 +8,21 @@ toBinary : Int -> Int -> List Int
 toBinary length value =
     Arithmetic.toBase value 2
         |> List.reverse
-        |> toLength length 0
+        |> toLength length
         |> List.reverse
 
 
-toLength : Int -> Int -> List Int -> List Int
-toLength length pos remaining =
-    case remaining of
-        head :: tail ->
-            head :: toLength length (pos + 1) tail
+toLength : Int List Int -> List Int
+toLength length list =
+    if length > 0 then
+        case list of
+            head :: tail ->
+                head :: toLength (length -1) tail
 
-        [] ->
-            if pos < length then
-                0 :: toLength length (pos + 1) []
-            else
-                []
+            [] ->
+                0 :: toLength (length - 1) []
+    else
+        []
 
 
 toDecimal : List Int -> Int
