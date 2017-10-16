@@ -16,10 +16,11 @@ toBinary : Int -> Int -> List Int
 toBinary length value =
     value
         |> Arithmetic.toBase 2
+        |> List.reverse
         |> toLength (length ^ 2) 0
+        |> List.reverse
 
 
--- bug
 toLength : Int -> a -> List a -> List a
 toLength length default list =
     if length > 0 then
