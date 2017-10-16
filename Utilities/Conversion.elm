@@ -17,7 +17,7 @@ toBinary length value =
     value
         |> Arithmetic.toBase 2
         |> List.reverse
-        |> toLength (length ^ 2) 0
+        |> toLength length 0
         |> List.reverse
 
 

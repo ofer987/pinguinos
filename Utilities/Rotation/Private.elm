@@ -15,7 +15,7 @@ clockwise length column row default source =
     if column < length then
         let
             sourceIndex =
-                length * (length - column - 1) + row
+                length * column + (length - row - 1)
 
             item =
                 Array.get sourceIndex source
@@ -40,13 +40,13 @@ counterClockwise length column row default source =
     if column < length then
         let
             sourceIndex =
-                length * column + (length - row - 1)
+                length * (length - column - 1) + row
 
             item =
                 Array.get sourceIndex source
                     |> Maybe.withDefault default
         in
-            item :: clockwise length (column + 1) row default source
+            item :: counterClockwise length (column + 1) row default source
     else if row < length then
         counterClockwise length 0 (row + 1) default source
     else

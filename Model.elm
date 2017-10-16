@@ -33,10 +33,21 @@ init =
     }
 
 
+type Rotation
+    = Clockwise
+    | Counterclockwise
+
+
 type Msg
-    = None
-    | SetFred ConfigurationSelection Sense
-    | SetBrad ConfigurationSelection Sense
-    | SetDave ConfigurationSelection Sense
-    | SetStan ConfigurationSelection Sense
-    | SetAlan ConfigurationSelection Sense
+    = RotateFred Rotation
+    | RotateBrad Rotation
+    | RotateDave Rotation
+    | RotateStan Rotation
+    | RotateAndy Rotation
+
+
+
+-- | SetBrad ConfigurationSelection Sense
+-- | SetDave ConfigurationSelection Sense
+-- | SetStan ConfigurationSelection Sense
+-- | SetAlan ConfigurationSelection Sense

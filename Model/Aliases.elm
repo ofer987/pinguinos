@@ -1,7 +1,7 @@
 -- TODO: Rename to Model.Types
 
 
-module Model.Aliases exposing (Configuration, ConfigurationSelection(..), Sense(..), Piece, Model, Length(..), senseToInt, lengthToInt)
+module Model.Aliases exposing (Configuration, ConfigurationSelection(..), Sense(..), Piece, Model, Length(..), senseToInt, senseToString, lengthToInt)
 
 
 type Sense
@@ -60,6 +60,20 @@ senseToInt sense =
         Left ->
             3
 
+senseToString : Sense -> String
+senseToString sense =
+    case sense of
+        Up ->
+            "Up"
+
+        Right ->
+            "Right"
+
+        Down ->
+            "Down"
+
+        Left ->
+            "Left"
 
 lengthToInt : Length -> Int
 lengthToInt length =

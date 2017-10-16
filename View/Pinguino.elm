@@ -1,8 +1,10 @@
 module View.Pinguino exposing (view)
 
 import Html.CssHelpers
-import Html exposing (Html, div, text)
+import Html exposing (Html, div, text, button)
+import Html.Events exposing (onClick)
 import Utilities.Conversion as Conversion
+import Utilities.Rotation as Rotation
 import List
 import Utilities.List
 import Model exposing (..)
@@ -22,7 +24,7 @@ view piece =
     in
         div
             [ class [ Pinguino ] ]
-            (label piece.configuration.name :: rows length length (pinguinoRows piece))
+            (label piece.configuration.name :: rotation piece.sense :: rotateClockwise :: rotateCounterclockwise :: rows length length (pinguinoRows piece))
 
 
 label : String -> Html Msg
@@ -77,12 +79,54 @@ column pinguinoColumn =
             []
 
 
+rotateClockwise : Html Msg
+rotateClockwise =
+    button
+        [ onClick (RotateFred Clockwise) ]
+        [ text "Clockwise" ]
+
+
+rotateCounterclockwise : Html Msg
+rotateCounterclockwise =
+    button
+        [ onClick (RotateFred Counterclockwise) ]
+        [ text "Counterclockwise" ]
+
+
+rotation : Sense -> Html Msg
+rotation sense =
+    div [] [ text (senseToString sense) ]
+
+
+rotatePinguino : Sense -> Int -> Int -> Int
+rotatePinguino sense length board =
+    case sense of
+        Up ->
+            board
+
+        Right ->
+            board
+                |> Rotation.clockwise length
+
+        Down ->
+            board
+                |> Rotation.clockwise length
+                |> Rotation.clockwise length
+
+        Left ->
+            board
+                |> Rotation.counterClockwise length
+
+
 pinguinoRows : Piece -> List (List Bool)
 pinguinoRows piece =
     let
         length =
             lengthToInt piece.configuration.length
+
+        board =
+            rotatePinguino piece.sense length piece.configuration.board
     in
-        Conversion.toBinary length piece.configuration.board
+        Conversion.toBinary (length ^ 2) board
             |> List.map Conversion.intToBool
             |> Utilities.List.toDoubleList length False

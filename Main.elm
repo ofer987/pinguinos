@@ -3,6 +3,7 @@ module Main exposing (..)
 import Html
 import Model exposing (..)
 import Model.Aliases exposing (..)
+import Update exposing (update)
 import View exposing (view)
 
 
@@ -22,15 +23,6 @@ main =
 init : ( Model, Cmd Msg )
 init =
     ( Model.init, Cmd.none )
-
-
-
--- UPDATE
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    ( model, Cmd.none )
 
 
 
