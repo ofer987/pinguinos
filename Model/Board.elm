@@ -1,9 +1,9 @@
 module Model.Board exposing (pieceOnBoard)
 
 import List
-import Utilities.List exposing (..)
+import Utility.List exposing (..)
 
-import Utilities.Conversions as Conversion
+import Utility.Conversions as Conversion
 
 import Model.Pinguino.Fred as Fred
 import Model.Pinguino.Brad as Brad

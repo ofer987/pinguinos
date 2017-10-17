@@ -3,10 +3,10 @@ module View.Pinguino exposing (view)
 import Html.CssHelpers
 import Html exposing (Html, div, text, button)
 import Html.Events exposing (onClick)
-import Utilities.Conversion as Conversion
-import Utilities.Rotation as Rotation
+import Utility.Conversion as Conversion
+import Utility.Rotation as Rotation
 import List
-import Utilities.List
+import Utility.List
 import Model exposing (..)
 import Model.Aliases exposing (..)
 import MyCss exposing (..)
@@ -129,4 +129,4 @@ pinguinoRows piece =
     in
         Conversion.toBinary (length ^ 2) board
             |> List.map Conversion.intToBool
-            |> Utilities.List.toDoubleList length False
+            |> Utility.List.toDoubleList length False

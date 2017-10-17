@@ -1,4 +1,4 @@
-module Utilities.List exposing (toDoubleList)
+module Utility.List exposing (toDoubleList)
 
 import List
 import Array exposing (Array)

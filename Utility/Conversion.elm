@@ -1,4 +1,4 @@
-module Utilities.Conversion exposing (toBinary, toDecimal, intToBool)
+module Utility.Conversion exposing (toBinary, toDecimal, intToBool)
 
 import List
 import Arithmetic

@@ -1,4 +1,4 @@
-module Utilities.Rotation.Private exposing (..)
+module Utility.Rotation.Private exposing (..)
 
 import Array exposing (Array)
 import List

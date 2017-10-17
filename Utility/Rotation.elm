@@ -1,8 +1,8 @@
-module Utilities.Rotation exposing (counterClockwise, clockwise)
+module Utility.Rotation exposing (counterClockwise, clockwise)
 
 import Model.Pinguino.Fred exposing (..)
-import Utilities.Rotation.Private as Private
-import Utilities.Conversion as Conversion
+import Utility.Rotation.Private as Private
+import Utility.Conversion as Conversion
 import List
 import Array exposing (Array)
 
