@@ -1,4 +1,4 @@
-module View.Pinguino.Fred exposing (view)
+module View.Pinguino.Brad exposing (view)
 
 import Html exposing (Html, div, text, button)
 import Html.Events exposing (onClick)
@@ -15,12 +15,12 @@ view piece =
 rotateClockwise : Html Msg
 rotateClockwise =
     button
-        [ onClick (RotateFred Clockwise) ]
+        [ onClick (RotateBrad Clockwise) ]
         [ text "Clockwise" ]
 
 
 rotateCounterclockwise : Html Msg
 rotateCounterclockwise =
     button
-        [ onClick (RotateFred Counterclockwise) ]
+        [ onClick (RotateBrad Counterclockwise) ]
         [ text "Counterclockwise" ]

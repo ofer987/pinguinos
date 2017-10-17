@@ -1,4 +1,17 @@
-module Model.Type exposing (Configuration, ConfigurationSelection(..), Sense(..), Piece, Model, Length(..), senseToInt, senseToString, lengthToInt)
+module Model.Type exposing (Configuration, ConfigurationSelection(..), Rotation(..), Msg(..), Sense(..), Piece, Model, Length(..), senseToInt, senseToString, lengthToInt)
+
+
+type Rotation
+    = Clockwise
+    | Counterclockwise
+
+
+type Msg
+    = RotateFred Rotation
+    | RotateBrad Rotation
+    | RotateDave Rotation
+    | RotateStan Rotation
+    | RotateAndy Rotation
 
 
 type Sense
@@ -30,6 +43,8 @@ type ConfigurationSelection
 type alias Piece =
     { configuration : Configuration
     , sense : Sense
+    , rotateClockwiseMsg : Msg
+    , rotateCounterclockwiseMsg : Msg
     }
 
 
@@ -57,6 +72,7 @@ senseToInt sense =
         Left ->
             3
 
+
 senseToString : Sense -> String
 senseToString sense =
     case sense of
@@ -71,6 +87,7 @@ senseToString sense =
 
         Left ->
             "Left"
+
 
 lengthToInt : Length -> Int
 lengthToInt length =

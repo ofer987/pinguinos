@@ -7,49 +7,20 @@ import Model.Type exposing (..)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        RotateFred Clockwise ->
-            let
-                currentFred =
-                    model.fred
+        RotateFred roty ->
+            ( { model | fred = newPiece roty model.fred }, Cmd.none )
 
-                currentSense =
-                    currentFred.sense
+        RotateBrad roty ->
+            ( { model | brad = newPiece roty model.brad }, Cmd.none )
 
-                newFred =
-                    { currentFred | sense = rotateClockwise currentSense }
+        RotateDave roty ->
+            ( { model | dave = newPiece roty model.dave }, Cmd.none )
 
-                newModel =
-                    { model | fred = newFred }
-            in
-                ( newModel, Cmd.none )
+        RotateStan roty ->
+            ( { model | stan = newPiece roty model.stan }, Cmd.none )
 
-        RotateFred Counterclockwise ->
-            let
-                currentFred =
-                    model.fred
-
-                currentSense =
-                    currentFred.sense
-
-                newFred =
-                    { currentFred | sense = rotateCounterclockwise currentSense }
-
-                newModel =
-                    { model | fred = newFred }
-            in
-                ( newModel, Cmd.none )
-
-        RotateBrad rotation ->
-            ( model, Cmd.none )
-
-        RotateDave rotation ->
-            ( model, Cmd.none )
-
-        RotateStan rotation ->
-            ( model, Cmd.none )
-
-        RotateAndy rotation ->
-            ( model, Cmd.none )
+        RotateAndy roty ->
+            ( { model | andy = newPiece roty model.andy }, Cmd.none )
 
 
 
@@ -88,6 +59,21 @@ update msg model =
 --       )
 --     , Cmd.none
 --     )
+
+
+newPiece : Rotation -> Piece -> Piece
+newPiece rotation piece =
+    { piece | sense = rotate rotation piece.sense }
+
+
+rotate : Rotation -> Sense -> Sense
+rotate rotation sense =
+    case rotation of
+        Clockwise ->
+            rotateClockwise sense
+
+        Counterclockwise ->
+            rotateCounterclockwise sense
 
 
 rotateClockwise : Sense -> Sense

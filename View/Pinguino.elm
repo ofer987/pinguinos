@@ -24,7 +24,7 @@ view piece =
     in
         div
             [ class [ Pinguino ] ]
-            (label piece.configuration.name :: rotation piece.sense :: rotateClockwise :: rotateCounterclockwise :: rows length length (pinguinoRows piece))
+            (label piece.configuration.name :: rotation piece.sense :: rotateClockwise piece.rotateClockwiseMsg :: rotateCounterclockwise piece.rotateCounterclockwiseMsg :: rows length length (pinguinoRows piece))
 
 
 label : String -> Html Msg
@@ -79,17 +79,17 @@ column pinguinoColumn =
             []
 
 
-rotateClockwise : Html Msg
-rotateClockwise =
+rotateClockwise : Msg -> Html Msg
+rotateClockwise msg =
     button
-        [ onClick (RotateFred Clockwise) ]
+        [ onClick msg ]
         [ text "Clockwise" ]
 
 
-rotateCounterclockwise : Html Msg
-rotateCounterclockwise =
+rotateCounterclockwise : Msg -> Html Msg
+rotateCounterclockwise msg =
     button
-        [ onClick (RotateFred Counterclockwise) ]
+        [ onClick msg ]
         [ text "Counterclockwise" ]
 
 

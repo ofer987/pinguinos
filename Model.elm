@@ -13,41 +13,31 @@ init =
     { fred =
         { configuration = Fred.firstConfiguration
         , sense = Up
+        , rotateClockwiseMsg = RotateFred Clockwise
+        , rotateCounterclockwiseMsg = RotateFred Counterclockwise
         }
     , brad =
         { configuration = Brad.firstConfiguration
         , sense = Up
+        , rotateClockwiseMsg = RotateBrad Clockwise
+        , rotateCounterclockwiseMsg = RotateBrad Counterclockwise
         }
     , dave =
         { configuration = Dave.firstConfiguration
         , sense = Up
+        , rotateClockwiseMsg = RotateDave Clockwise
+        , rotateCounterclockwiseMsg = RotateDave Counterclockwise
         }
     , stan =
         { configuration = Stan.firstConfiguration
         , sense = Up
+        , rotateClockwiseMsg = RotateStan Clockwise
+        , rotateCounterclockwiseMsg = RotateStan Counterclockwise
         }
     , andy =
         { configuration = Andy.firstConfiguration
         , sense = Up
+        , rotateClockwiseMsg = RotateAndy Clockwise
+        , rotateCounterclockwiseMsg = RotateAndy Counterclockwise
         }
     }
-
-
-type Rotation
-    = Clockwise
-    | Counterclockwise
-
-
-type Msg
-    = RotateFred Rotation
-    | RotateBrad Rotation
-    | RotateDave Rotation
-    | RotateStan Rotation
-    | RotateAndy Rotation
-
-
-
--- | SetBrad ConfigurationSelection Sense
--- | SetDave ConfigurationSelection Sense
--- | SetStan ConfigurationSelection Sense
--- | SetAlan ConfigurationSelection Sense
