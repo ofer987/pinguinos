@@ -1,7 +1,7 @@
 module Update exposing (update)
 
 import Model exposing (..)
-import Model.Aliases exposing (..)
+import Model.Type exposing (..)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

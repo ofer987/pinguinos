@@ -2,7 +2,7 @@ module Main exposing (..)
 
 import Html
 import Model exposing (..)
-import Model.Aliases exposing (..)
+import Model.Type exposing (..)
 import Update exposing (update)
 import View exposing (view)
 

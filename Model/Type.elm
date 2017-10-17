@@ -1,7 +1,4 @@
--- TODO: Rename to Model.Types
-
-
-module Model.Aliases exposing (Configuration, ConfigurationSelection(..), Sense(..), Piece, Model, Length(..), senseToInt, senseToString, lengthToInt)
+module Model.Type exposing (Configuration, ConfigurationSelection(..), Sense(..), Piece, Model, Length(..), senseToInt, senseToString, lengthToInt)
 
 
 type Sense

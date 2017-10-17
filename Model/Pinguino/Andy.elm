@@ -1,6 +1,6 @@
 module Model.Pinguino.Andy exposing (..)
 
-import Model.Aliases exposing (Configuration, ConfigurationSelection (..), Length (..))
+import Model.Type exposing (Configuration, ConfigurationSelection (..), Length (..))
 
 
 firstConfiguration : Configuration

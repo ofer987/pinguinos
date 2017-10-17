@@ -1,6 +1,6 @@
 module Model exposing (..)
 
-import Model.Aliases exposing (..)
+import Model.Type exposing (..)
 import Model.Pinguino.Fred as Fred
 import Model.Pinguino.Brad as Brad
 import Model.Pinguino.Dave as Dave
