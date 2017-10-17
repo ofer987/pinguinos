@@ -3,7 +3,6 @@ module View.Board exposing (view)
 import Html.CssHelpers
 import Html exposing (Html, div)
 import Model exposing (..)
-import Model.Type exposing (..)
 import MyCss exposing (..)
 
 

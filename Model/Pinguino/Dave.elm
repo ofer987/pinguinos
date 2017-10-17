@@ -1,6 +1,6 @@
 module Model.Pinguino.Dave exposing (..)
 
-import Model.Type exposing (Configuration, ConfigurationSelection (..), Length (..))
+import Model exposing (Configuration, ConfigurationSelection (..), Length (..))
 
 
 firstConfiguration : Configuration

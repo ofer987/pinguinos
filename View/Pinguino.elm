@@ -8,7 +8,6 @@ import Utility.Rotation as Rotation
 import List
 import Utility.List
 import Model exposing (..)
-import Model.Type exposing (..)
 import MyCss exposing (..)
 
 

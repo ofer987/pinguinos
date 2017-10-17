@@ -4,7 +4,6 @@ import Html exposing (Html, div)
 import View.Board exposing (view)
 import View.Pinguino exposing (view)
 import Model exposing (..)
-import Model.Type exposing (..)
 
 
 view : Model -> Html Msg

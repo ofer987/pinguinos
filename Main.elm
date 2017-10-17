@@ -1,8 +1,8 @@
 module Main exposing (..)
 
 import Html
+import Init exposing (..)
 import Model exposing (..)
-import Model.Type exposing (..)
 import Update exposing (update)
 import View exposing (view)
 
@@ -22,7 +22,7 @@ main =
 
 init : ( Model, Cmd Msg )
 init =
-    ( Model.init, Cmd.none )
+    ( modelInit, Cmd.none )
 
 
 
